@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Remon Cloud Payment</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Orbitron',sans-serif;
+}
+
+body{
+background:black;
+color:white;
+overflow:hidden;
+}
+
+/* background serem gerak */
+
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:radial-gradient(circle,#00aaff22 1px,transparent 1px);
+background-size:40px 40px;
+animation:move 20s linear infinite;
+z-index:-1;
+}
+
+@keyframes move{
+0%{transform:translate(0,0)}
+100%{transform:translate(-200px,-200px)}
+}
+
+/* logo */
+
+.logo{
+position:absolute;
+top:20px;
+left:30px;
+font-size:24px;
+color:#00ccff;
+text-shadow:0 0 10px #00ccff,0 0 20px #00ccff;
+}
+
+/* welcome */
+
+#welcome{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.title{
+font-size:40px;
+text-shadow:0 0 10px #00bfff,0 0 30px #00bfff;
+margin-bottom:40px;
+}
+
+.enter{
+padding:15px 40px;
+font-size:20px;
+background:#001aff;
+border:none;
+border-radius:10px;
+color:white;
+cursor:pointer;
+box-shadow:0 0 10px #00ccff,0 0 30px #00ccff;
+}
+
+/* payment */
+
+#payment{
+display:none;
+padding-top:120px;
+text-align:center;
+}
+
+.payment-title{
+font-size:26px;
+margin-bottom:40px;
+text-shadow:0 0 10px #00bfff;
+}
+
+/* container */
+
+.container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+padding:20px;
+}
+
+.card{
+width:280px;
+background:#000000aa;
+border:1px solid #00ccff;
+border-radius:15px;
+padding:20px;
+box-shadow:0 0 15px #00ccff;
+}
+
+.card img{
+width:80px;
+margin-bottom:10px;
+}
+
+.card h3{
+color:#00ccff;
+margin-bottom:10px;
+}
+
+.card p{
+margin:4px 0;
+}
+
+/* qris */
+
+.qris img{
+width:200px;
+border-radius:10px;
+}
+
+/* teks kirim bukti */
+
+.bukti{
+margin-top:30px;
+font-size:16px;
+text-shadow:0 0 10px #00bfff;
+}
+
+/* tombol whatsapp */
+
+.wa{
+margin-top:15px;
+padding:15px 30px;
+background:#25D366;
+border:none;
+border-radius:10px;
+color:white;
+font-size:16px;
+cursor:pointer;
+box-shadow:0 0 10px #25D366,0 0 30px #25D366;
+}
+
+/* kota neon */
+
+.city{
+position:fixed;
+bottom:0;
+width:100%;
+height:120px;
+background:linear-gradient(to top,#001aff,transparent);
+box-shadow:0 -10px 40px #00ccff;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="logo">REMON CLOUD</div>
+
+<!-- halaman awal -->
+
+<div id="welcome">
+
+<div class="title">
+SELAMAT DATANG DI PAYMENT REMON
+</div>
+
+<button class="enter" onclick="masuk()">MASUK</button>
+
+</div>
+
+<!-- halaman payment -->
+
+<div id="payment">
+
+<div class="payment-title">
+SILAHKAN PILIH METODE PEMBAYARAN
+</div>
+
+<div class="container">
+
+<!-- DANA -->
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_dana_blue.svg">
+<h3>DANA</h3>
+<p>089677477066</p>
+<p>A/N: NULIYAH R</p>
+</div>
+
+<!-- GOPAY -->
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Gopay_logo.svg">
+<h3>GOPAY</h3>
+<p>089677477066</p>
+<p>A/N: NULIYAH R</p>
+</div>
+
+<!-- OVO -->
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Logo_ovo_purple.svg">
+<h3>OVO</h3>
+<p>089677477066</p>
+<p>A/N: NULIYAH R</p>
+</div>
+
+<!-- QRIS -->
+
+<div class="card qris">
+<h3>QRIS UNTUK SEMUA</h3>
+<img src="qris.jpg">
+</div>
+
+</div>
+
+<!-- bukti transfer -->
+
+<div class="bukti">
+6289677477066  
+<br>
+JANGAN LUPA KIRIM BUKTI TF
+</div>
+
+<button class="wa"
+onclick="window.open('https://wa.me/6289677477066?text=Halo%20saya%20sudah%20transfer','_blank')">
+KIRIM BUKTI TF KE WHATSAPP
+</button>
+
+</div>
+
+<div class="city"></div>
+
+<script>
+
+function masuk(){
+document.getElementById("welcome").style.display="none";
+document.getElementById("payment").style.display="block";
+}
+
+</script>
+
+</body>
+</html>
